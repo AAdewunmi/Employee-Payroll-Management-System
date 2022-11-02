@@ -50,7 +50,18 @@ public class Employee {
 		return Objects.hash(this.id, this.name, this.role);
 	}
 
-	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Employee)) {
+			return false;
+		}
+		Employee employee = (Employee) obj;
+		return Objects.equals(this.id, employee.id) && Objects.equals(this.name, employee.name) 
+				&& Objects.equals(this.role, employee.role);
+	}
 	
 	
 }
