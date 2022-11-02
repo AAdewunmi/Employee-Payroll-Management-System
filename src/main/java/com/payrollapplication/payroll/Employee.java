@@ -9,6 +9,13 @@ public class Employee {
 	public Employee() {
 		super();
 	}
+
+	public Employee(Long id, String name, String role) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.role = role;
+	}
 	
 	
 }
