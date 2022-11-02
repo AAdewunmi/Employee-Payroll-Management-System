@@ -62,6 +62,10 @@ public class Employee {
 		return Objects.equals(this.id, employee.id) && Objects.equals(this.name, employee.name) 
 				&& Objects.equals(this.role, employee.role);
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Employee{" + "id=" + this.id + ", name='" + this.name + '\'' + ", role='" + this.role + '\'' + '}';
+	  }
 	
 }
