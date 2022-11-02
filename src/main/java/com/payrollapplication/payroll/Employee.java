@@ -1,5 +1,9 @@
 package com.payrollapplication.payroll;
 
+import java.util.Objects;
+
+import net.bytebuddy.asm.Advice.This;
+
 public class Employee {
 	
 	private Long id;
@@ -40,6 +44,13 @@ public class Employee {
 	public void setRole(String role) {
 		this.role = role;
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(this.id, this.name, this.role);
+	}
+
+	
 	
 	
 }
