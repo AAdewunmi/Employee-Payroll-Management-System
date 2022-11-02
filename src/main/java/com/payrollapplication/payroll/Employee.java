@@ -2,11 +2,14 @@ package com.payrollapplication.payroll;
 
 import java.util.Objects;
 
-import net.bytebuddy.asm.Advice.This;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
 public class Employee {
 	
-	private Long id;
+	private @Id @GeneratedValue Long id;
 	private String name;
 	private String role;
 	
