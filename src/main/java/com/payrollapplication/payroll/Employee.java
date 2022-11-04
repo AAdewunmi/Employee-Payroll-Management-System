@@ -17,9 +17,7 @@ public class Employee {
 		super();
 	}
 
-	public Employee(Long id, String name, String role) {
-		super();
-		this.id = id;
+	public Employee(String name, String role) {
 		this.name = name;
 		this.role = role;
 	}
