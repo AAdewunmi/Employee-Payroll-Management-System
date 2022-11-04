@@ -2,7 +2,7 @@
 
 # Project Title:
 
-Employee Payroll Management System
+Employee Payroll Management System (Spring Boot CRUD Web Application)
 
 ## 1. What is the project?
 
