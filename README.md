@@ -17,8 +17,11 @@ Then we’ll wrap that with something that will allow access over the internet (
 - Java 17
 - Spring MVC
 - Spring Boot
+- Spring HATEOAS
 - Java JPA
 - H2 Database.
+- JSON
+- Postman
 
 ## 3. What is the MVP?
 The minimal viable product is a Spring Boot CRUD Web Application with Spring MVC, Spring Data JPA and H2 Database for managing a company's employee payroll.
