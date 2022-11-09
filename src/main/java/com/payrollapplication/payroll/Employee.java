@@ -10,18 +10,28 @@ import javax.persistence.Id;
 public class Employee {
 	
 	private @Id @GeneratedValue Long id;
-	private String name;
+	private String firstName;
+	private String lastName;
 	private String role;
 	
-	public Employee() {
-		super();
-	}
+	public Employee() {}
 
-	public Employee(String name, String role) {
-		this.name = name;
+	public Employee(String firstName, String lastName, String role) {
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.role = role;
 	}
-
+	
+	public String getName() {
+		return this.firstName + " " + this.lastName;
+	}
+	
+	public void setName(String name) {
+		String[] parts = name.split(" ");
+		this.firstName = parts[0];
+		this.lastName = parts[0];
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -30,12 +40,20 @@ public class Employee {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getRole() {
@@ -48,7 +66,7 @@ public class Employee {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(this.id, this.name, this.role);
+		return Objects.hash(firstName, id, lastName, role);
 	}
 
 	@Override
@@ -59,14 +77,21 @@ public class Employee {
 		if (!(obj instanceof Employee)) {
 			return false;
 		}
-		Employee employee = (Employee) obj;
-		return Objects.equals(this.id, employee.id) && Objects.equals(this.name, employee.name) 
-				&& Objects.equals(this.role, employee.role);
+		Employee other = (Employee) obj;
+		return Objects.equals(firstName, other.firstName) && Objects.equals(id, other.id)
+				&& Objects.equals(lastName, other.lastName) && Objects.equals(role, other.role);
 	}
 
 	@Override
 	public String toString() {
-		return "Employee{" + "id=" + this.id + ", name='" + this.name + '\'' + ", role='" + this.role + '\'' + '}';
+	    return "Employee{" + "id=" + this.id + ", firstName='" + this.firstName + '\'' + ", lastName='" + this.lastName
+	        + '\'' + ", role='" + this.role + '\'' + '}';
 	  }
+	
+	
+	
+	
+	
+	
 	
 }
