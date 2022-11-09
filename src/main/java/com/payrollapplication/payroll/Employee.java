@@ -29,7 +29,7 @@ public class Employee {
 	public void setName(String name) {
 		String[] parts = name.split(" ");
 		this.firstName = parts[0];
-		this.lastName = parts[0];
+		this.lastName = parts[1];
 	}
 	
 	public Long getId() {
