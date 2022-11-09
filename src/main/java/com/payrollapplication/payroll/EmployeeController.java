@@ -27,13 +27,7 @@ public class EmployeeController {
 		this.assembler = assembler;
 	}
 	
-	/*
-	 * @GetMapping("/employees") List<Employee> all(){ return repository.findAll();
-	 * }
-	 */
-	
 	@GetMapping("/employees")
-	// Upgrade RPC service to RESTful service by using Spring HATEOAS
 	CollectionModel<EntityModel<Employee>> all(){
 		List<EntityModel<Employee>> employees = repository.findAll().stream()
 				.map(employee -> EntityModel.of(employee, 
@@ -50,20 +44,11 @@ public class EmployeeController {
 		return repository.save(newEmployee);
 	}
 	
-	/*
-	 * @GetMapping("/employees/{id}") Employee one(@PathVariable Long id){ return
-	 * repository.findById(id) .orElseThrow(() -> new EmployeeNotFoundException(id)
-	 * ); }
-	 */
-	
 	@GetMapping("/employees/{id}")
-	// Upgrade RPC service to RESTful service by using Spring HATEOAS
 	EntityModel<Employee> one(@PathVariable Long id){
 		Employee employee = repository.findById(id)
 				.orElseThrow(() -> new EmployeeNotFoundException(id));
-		return EntityModel.of(employee, //
-				linkTo(methodOn(EmployeeController.class).one(id)).withSelfRel(),
-			      linkTo(methodOn(EmployeeController.class).all()).withRel("employees"));
+		return assembler.toModel(employee);
 	}
 	
 	@PutMapping("/employees/{id}")
