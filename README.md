@@ -1,6 +1,6 @@
 # Project Title:
 
-Employee Payroll Management System (Spring Boot CRUD Web Application)
+Employee Payroll Management System (A RESTful API for Spring Boot)
 
 ## 1. What is the project?
 
@@ -13,7 +13,9 @@ To upgrade your service to being RESTful, add this to your build: ... "
 
 -- Building REST services with Spring (Spring Guide)
 
-This is MY implementation of a SPRING quide: "Building REST services with Spring".
+#### This is an Employee Payroll Management RESTful API for Spring Boot, which performs CRUD operations on an in-memory database.
+
+#### An implementation of a SPRING quide: "Building REST services with Spring".
 
 ## 2. Tech Stack:
 
@@ -44,7 +46,7 @@ i. Open project in preferred IDE (I'm using SpringToolSuit4)
 
 ii. Run as a Spring Boot App
 
-iii. Test API end points using Postman
+iii. Test RESTful API end points using Postman for CRUD operations:
 
 - Get All Employees
 - Get Employee By ID
